@@ -393,6 +393,7 @@ body[data-view="table"] .custom-section.table {
 .th-stack .pill--price{
   inline-size: 100%;
   box-sizing: border-box;
+  font-weight: 400;
 }
 
 

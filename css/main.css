@@ -32,6 +32,31 @@ body {
   margin: 0 auto;
   padding: 40px 0;
 }
+.custom-btn {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 10px 28px;
+  font-size: 18px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  align-self: flex-start;
+  display: inline-flex;   
+  width: auto;              
+}
+.custom-btn:hover {
+  transform: scale(0.9);
+}
+.custom-btn a {
+  color: var(--white);
+  text-decoration: none;
+}
+.custom-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
 .link:hover {
   text-decoration: underline;
 }
@@ -39,13 +64,7 @@ p + p {
   margin-top: 12px;
 }
 
-/* FIRST SCREEN */
-.custom-breadcrumb-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
+/* Компонент: первый экран */
 .hero-content {
   background-image: url('../img/bg-images/main-banner.webp');
   background-color: var(--black);
@@ -73,7 +92,7 @@ p + p {
   max-width: 200px;
 }
 
-/* COMPONENT: CARDS */
+/* Компонент: карточки */
 .cards-row {
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +101,6 @@ p + p {
   margin-top: 40px;
   align-items: stretch;
   padding-bottom: 15px;
-  cursor: pointer;
 }
 .card-item {
   display: flex;
@@ -94,17 +112,12 @@ p + p {
   height: 138px;
   transition: 0.3s ease;
 }
-.card-item:hover {
-  transform: scale(0.9);
-}
-
 .card-item__condition {
   font-size: 12px;
   font-weight: 700;
   color: var(--red);
   text-transform: uppercase;
 }
-
 .card-item__title {
   font-size: 20px;
   font-weight: 700;
@@ -118,27 +131,8 @@ p + p {
   font-size: 14px;
   text-align: center;
 }
-.custom-btn {
-  background-color: var(--red);
-  color: var(--white);
-  padding: 10px 28px;
-  font-size: 18px;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-  width: 100%;
-  align-self: flex-start;
-  display: inline-flex;   
-  width: auto;              
-}
-.custom-btn:hover {
-  transform: scale(0.9);
-}
-.custom-btn a {
-  color: var(--white);
-  text-decoration: none;
-}
 
-/* COMPONENT: BLOCK-CONTENT */
+/* Компонент: контентные блоки */
 .block-content {
   padding: 20px;
   background-color: var(--white);
@@ -150,7 +144,7 @@ p + p {
   gap: 20px;
 }
 
-/* top view switch */
+/* Компонент: переключатели таблицы */
 .view-switch {
   display: flex;
   gap: 8px;
@@ -159,10 +153,8 @@ p + p {
 }
 .seg {
   display: inline-flex;
-  border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
-  background: var(--chip);
 }
 .seg button {
   border: 0;
@@ -174,10 +166,20 @@ p + p {
   background-color: var(--red);
   color: var(--white)
 }
-.seg button+button {
-  border-left: 1px solid var(--line);
+.tab-section { /* По умолчанию: вид "Вкладки" */
+  display: block;
+} 
+.custom-section.table {
+  display: none;
+}
+body[data-view="table"] .tab-section {
+  display: none;
+}
+body[data-view="table"] .custom-section.table {
+  display: block;
 }
 
+/* Компонент: подсказки */
 .guide {
   display: flex;
   align-items: center;
@@ -192,8 +194,7 @@ p + p {
   transform: scale(1.05);
 }
 
-/* COMPONENT: TAB-SECTION-PANEL */
-
+/* Компонент: вкладки */
 .tab-section__panel {
   display: flex;
   background-color: var(--white);
@@ -202,53 +203,34 @@ p + p {
   padding: 15px;
   overflow-x: auto;
 }
-
 .tab-section__item {
   font-size: 16px;
   padding: 10px 15px;
   border: 1px solid transparent;
   min-width: max-content;
 }
-
 .tab-section__item:hover {
   cursor: pointer;
   border: 1px solid var(--red);
   border-radius: 18px;
 }
-
 .tab-section__item.active {
   background-color: var(--red);
   color: var(--white);
   border-radius: 18px;
 }
 
-/* COMPONENT: SWITCHER */
-
-/* По умолчанию: вид "Вкладки" */
-.tab-section{ display:block; }
-.custom-section.table{ display:none; }
-
-/* Когда активируем режим "Таблица + фильтры" через data-view на body */
-body[data-view="table"] .tab-section{ display:none; }
-body[data-view="table"] .custom-section.table{ display:block; }
-
-
-
-
-/* COMPONENT: CONENT-PANEL */
-
+/* Компонент: вкладки (контент панель) */
 .content-panel {
   border-radius: 18px;
   background-color: var(--white);
   padding: 20px;
   margin-top: 20px;
 }
-
 .content-panel__top {
   display: flex;
   gap: 10px;
 }
-
 .content-panel__top-item {
   padding: 10px 15px;
   border-radius: 25px;
@@ -258,36 +240,25 @@ body[data-view="table"] .custom-section.table{ display:block; }
   align-items: center;
   gap: 10px;
 }
-
-.content-panel__top-item:hover {
-  transform: scale(1.1);
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
 .content-panel__bottom {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-
 .content-panel__bottom-item {
   padding: 10px 6px;
   font-size: 16px;
   border-radius: 10px;
-  border: dashed;
-  border-color: var(--light-gray);
+  border: 1px dashed var(--light-gray);
 }
-
 .content-panel__bottom-item:hover {
   border-color: var(--black);
-  cursor: pointer;
   transition: 0.5s ease;
 }
 
-/* COMPONENT: TABLE-TOP */
-
+/* Компонент: таблица + фильтры */
+/* Верхняя часть с фильтрами */
 .table-top {
   display: flex;
   gap: 12px;
@@ -297,57 +268,70 @@ body[data-view="table"] .custom-section.table{ display:block; }
   padding: 15px;
   overflow-x: auto;
 }
-
-/* обертка-лейбл */
-.table-filter{display:inline-block;position:relative}
-
-/* нативный чекбокс — скрываем визуально, но оставляем доступность */
-.table-filter > input{
-  position:absolute; inset:0; width:100%; height:100%;
-  opacity:0; cursor:pointer;
+.table-filter {
+  display: inline-block;
+  position: relative;
 }
-
-/* сама «пилюля» */
-.table-filter__pill{
-  display:inline-flex; align-items:center; gap:10px;
-  padding:10px 14px; border-radius:999px;
-  background:var(--light-gray, #F7F9FC);
-  border:1px solid #e9edf2; color:var(--black,#0d0f14);
-  line-height:1; min-width:max-content; transition:.15s;
+.table-filter > input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
-
-/* квадрат чекбокса слева */
-.table-filter__check{
-  width:18px; height:18px; border-radius:4px;
-  border:2px solid currentColor; display:grid; place-items:center;
+.table-filter__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--light-gray, #F7F9FC);
+  border: 1px solid #e9edf2;
+  color: var(--black, #0d0f14);
+  line-height: 1;
+  min-width: max-content;
+  transition: .15s;
+}
+.table-filter__check {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid currentColor;
+  display: grid;
+  place-items: center;
   background:transparent;
 }
-.table-filter__check::after{
-  content:""; width:8px; height:5px;
-  border-left:2px solid transparent; border-bottom:2px solid transparent;
-  transform:rotate(-45deg) translateY(-1px);
+.table-filter__check::after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: rotate(-45deg) translateY(-1px);
+}
+.table-filter > input:checked + .table-filter__pill {
+  background: var(--red, #DA2720);
+  border-color: var(--red, #DA2720);
+  color: #fff;
+}
+.table-filter > input:checked + .table-filter__pill .table-filter__check {
+  background: #fff;
+  border-color: #fff;
+}
+.table-filter > input:checked + .table-filter__pill .table-filter__check::after {
+  border-color: #DA2720;
+}
+.table-filter__pill:focus-visible {
+  outline: 2px solid #c41f1a;
+  outline-offset: 2px;
 }
 
-/* состояние :checked перекрашивает пилюлю и рисует галочку */
-.table-filter > input:checked + .table-filter__pill{
-  background:var(--red,#DA2720); border-color:var(--red,#DA2720); color:#fff;
-}
-.table-filter > input:checked + .table-filter__pill .table-filter__check{
-  background:#fff; border-color:#fff;
-}
-.table-filter > input:checked + .table-filter__pill .table-filter__check::after{
-  border-color:#DA2720;
-}
-
-.table-filter__pill:focus-visible{ outline:2px solid #c41f1a; outline-offset:2px }
-
-/* COMPONENT: TABLE-BOTTOM */
-
+/* Нижняя часть с таблицей */
 .table-bottom {
   margin-top: 20px;
   cursor: pointer;
 }
-
 .table-head-row,
 .table-body {
   font-size: 16px;
@@ -376,7 +360,6 @@ body[data-view="table"] .custom-section.table{ display:block; }
 .table-bottom .zebra tbody tr:nth-child(odd) td {
   background:#fafbfc
 }
-
 .pill {
   display:inline-flex;
   align-items:center;
@@ -388,65 +371,43 @@ body[data-view="table"] .custom-section.table{ display:block; }
   white-space:nowrap
 }
 .muted {
-  color:#6b7280
+  color: #6b7280;
 }
-
-/* шапка таблицы: две пилюли вертикально */
-.table thead th { vertical-align: top; }
-.th-stack { display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
-
-/* базовая пилюля уже есть — немного донастроим для шапки */
-.th-stack .pill--price { font-weight:800; }
-
-/* шапка таблицы: две пилюли вертикально */
-.table thead th { vertical-align: top; }
-
-.th-stack{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+.table thead th {
+  vertical-align: top;
+}
+.th-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.th-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   align-items:flex-start;
 }
-
-/* аккуратный вес текста */
-.th-stack .pill{
-  font-weight:600;          /* было слишком жирно */
-  overflow:visible;         /* чтобы svg не обрезался у краёв */
-}
-
-.th-stack .pill--price,
-.pill {
-  font-weight: 400;
-}
-
-/* предсказуемые размеры иконок */
 .th-stack .pill .icon{
   width:20px;
-  height:20x;
+  height:20px;
   flex:0 0 20px;
   display:inline-block;
 }
-
-/* контейнер заголовка колонки */
 .th-stack{
   display:flex;
-  flex-direction:column;
-  gap:8px;
-  align-items:flex-start;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
 }
-
-/* делаем обе пилюли одинаковой ширины = ширина th (равна ширине большего элемента) */
 .th-stack .pill,
 .th-stack .pill--price{
-  inline-size: 100%;       /* = width:100% */
+  inline-size: 100%;
   box-sizing: border-box;
 }
 
 
 
-
-
-/* MEDIA QUERIES */
 @media (max-width: 1024px) {
   .custom-container {
     padding: 40px 20px;

@@ -1,0 +1,560 @@
+:root {
+  --background-color: #EFF1F4;
+  --dark-gray: #828282;
+  --light-gray: #F7F9FC;
+  --white: #fff;
+  --black: #000;
+  --red: #DA2720;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--background-color);
+  font-family: 'Fira Sans', Arial, sans-serif;
+  color: var(--black);
+  font-weight: 400;
+  font-size: 18px !important;
+}
+.custom-h1, .custom-h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.custom-h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.custom-section {
+  margin-top: 40px;
+}
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.link:hover {
+  text-decoration: underline;
+}
+p + p {
+  margin-top: 12px;
+}
+
+/* FIRST SCREEN */
+.custom-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.hero-content {
+  background-image: url('../img/bg-images/main-banner.webp');
+  background-color: var(--black);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 130px 40px;
+  border-radius: 20px;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.hero-content h1 {
+    color: var(--white);
+}
+.hero-content p {
+  font-size: 24px;
+  color: var(--white);
+}
+.hero-content a {
+  margin-top: 0;
+  max-width: 200px;
+}
+
+/* COMPONENT: CARDS */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-x: auto;
+  margin-top: 40px;
+  align-items: stretch;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+.card-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  width: 380px;
+  height: 138px;
+  transition: 0.3s ease;
+}
+.card-item:hover {
+  transform: scale(0.9);
+}
+
+.card-item__condition {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+.card-item__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+.card-item__price {
+  font-size: 24px;
+  font-weight: 700;
+}
+.card-item p {
+  font-size: 14px;
+  text-align: center;
+}
+.custom-btn {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 10px 28px;
+  font-size: 18px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  align-self: flex-start;
+  display: inline-flex;   
+  width: auto;              
+}
+.custom-btn:hover {
+  transform: scale(0.9);
+}
+.custom-btn a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* COMPONENT: BLOCK-CONTENT */
+.block-content {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 20px;
+  margin: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+  /* top view switch */
+  .view-switch {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+  }
+  .seg {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chip);
+  }
+  .seg button {
+    border: 0;
+    background-color: var(--white);
+    padding: 10px 14px;
+    cursor: pointer;
+  }
+  .seg button[aria-pressed="true"] {
+    background-color: var(--red);
+    color: var(--white)
+  }
+  .seg button+button {
+    border-left: 1px solid var(--line);
+  }
+
+
+
+/* COMPONENT: TAB-SECTION-PANEL */
+
+.tab-section__panel {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 18px;
+  justify-content: space-between;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+.tab-section__item {
+  font-size: 16px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  min-width: max-content;
+}
+
+.tab-section__item:hover {
+  cursor: pointer;
+  border: 1px solid var(--red);
+  border-radius: 18px;
+}
+
+.tab-section__item.active {
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 18px;
+}
+
+/* COMPONENT: SWITCHER */
+
+/* По умолчанию: вид "Вкладки" */
+.tab-section{ display:block; }
+.custom-section.table{ display:none; }
+
+/* Когда активируем режим "Таблица + фильтры" через data-view на body */
+body[data-view="table"] .tab-section{ display:none; }
+body[data-view="table"] .custom-section.table{ display:block; }
+
+
+
+
+/* COMPONENT: CONENT-PANEL */
+
+.content-panel {
+  border-radius: 18px;
+  background-color: var(--white);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.content-panel__top {
+  display: flex;
+  gap: 10px;
+}
+
+.content-panel__top-item {
+  padding: 10px 15px;
+  border-radius: 25px;
+  background-color: var(--light-gray);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content-panel__top-item:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.content-panel__bottom {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.content-panel__bottom-item {
+  padding: 10px 6px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: dashed;
+  border-color: var(--light-gray);
+}
+
+.content-panel__bottom-item:hover {
+  border-color: var(--black);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+/* COMPONENT: TABLE-TOP */
+
+.table-top {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border-radius: 18px;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+/* обертка-лейбл */
+.table-filter{display:inline-block;position:relative}
+
+/* нативный чекбокс — скрываем визуально, но оставляем доступность */
+.table-filter > input{
+  position:absolute; inset:0; width:100%; height:100%;
+  opacity:0; cursor:pointer;
+}
+
+/* сама «пилюля» */
+.table-filter__pill{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 14px; border-radius:999px;
+  background:var(--light-gray, #F7F9FC);
+  border:1px solid #e9edf2; color:var(--black,#0d0f14);
+  line-height:1; min-width:max-content; transition:.15s;
+}
+
+/* квадрат чекбокса слева */
+.table-filter__check{
+  width:18px; height:18px; border-radius:4px;
+  border:2px solid currentColor; display:grid; place-items:center;
+  background:transparent;
+}
+.table-filter__check::after{
+  content:""; width:8px; height:5px;
+  border-left:2px solid transparent; border-bottom:2px solid transparent;
+  transform:rotate(-45deg) translateY(-1px);
+}
+
+/* состояние :checked перекрашивает пилюлю и рисует галочку */
+.table-filter > input:checked + .table-filter__pill{
+  background:var(--red,#DA2720); border-color:var(--red,#DA2720); color:#fff;
+}
+.table-filter > input:checked + .table-filter__pill .table-filter__check{
+  background:#fff; border-color:#fff;
+}
+.table-filter > input:checked + .table-filter__pill .table-filter__check::after{
+  border-color:#DA2720;
+}
+
+.table-filter__pill:focus-visible{ outline:2px solid #c41f1a; outline-offset:2px }
+
+/* COMPONENT: TABLE-BOTTOM */
+
+.table-bottom {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.table-head-row,
+.table-body {
+  font-size: 16px;
+}
+.table-bottom .table-wrap {
+  overflow:auto;border-radius:18px
+}
+.table-bottom table {
+  border-collapse:separate;
+  border-spacing:0;
+  width:100%;
+  min-width:900px
+}
+.table-bottom thead th {
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:1
+}
+.table-bottom th,
+.table-bottom td {
+  padding:12px;
+  border-bottom:1px solid #e9edf2;
+  text-align:center
+}
+.table-bottom .zebra tbody tr:nth-child(odd) td {
+  background:#fafbfc
+}
+
+.pill {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  background:#F7F9FC;
+  border:1px solid #e9edf2;
+  border-radius:999px;
+  white-space:nowrap
+}
+.muted {
+  color:#6b7280
+}
+
+/* шапка таблицы: две пилюли вертикально */
+.table thead th { vertical-align: top; }
+.th-stack { display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
+
+/* базовая пилюля уже есть — немного донастроим для шапки */
+.th-stack .pill--price { font-weight:800; }
+
+/* шапка таблицы: две пилюли вертикально */
+.table thead th { vertical-align: top; }
+
+.th-stack{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:flex-start;
+}
+
+/* аккуратный вес текста */
+.th-stack .pill{
+  font-weight:600;          /* было слишком жирно */
+  overflow:visible;         /* чтобы svg не обрезался у краёв */
+}
+
+.th-stack .pill--price,
+.pill {
+  font-weight: 400;
+}
+
+/* предсказуемые размеры иконок */
+.th-stack .pill .icon{
+  width:20px;
+  height:20x;
+  flex:0 0 20px;
+  display:inline-block;
+}
+
+/* контейнер заголовка колонки */
+.th-stack{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:flex-start;
+}
+
+/* делаем обе пилюли одинаковой ширины = ширина th (равна ширине большего элемента) */
+.th-stack .pill,
+.th-stack .pill--price{
+  inline-size: 100%;       /* = width:100% */
+  box-sizing: border-box;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .custom-container {
+    padding: 40px 20px;
+  }
+  .hero-content {
+    padding: 107px 20px;
+  }
+  .hero-content h1 {
+    font-size: 26px;
+  }
+  .hero-content p {
+    max-width: 362px;
+  }
+  .custom-h2 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+    background-position: 70% 40%;
+    padding: 107px 20px;
+  }
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 450px) {
+  .custom-container {
+    padding: 40px 15px;
+  }
+  .hero-content {
+    background-position: 75% 40%;
+    padding: 106px 18px;
+  }
+  nav {
+    font-size: 16px;
+  }
+  .custom-h1, .custom-h2 {
+    font-size: 20px;
+  }
+  .custom-h3 {
+    font-size: 18px;
+  }
+  p, li {
+    font-size: 16px;
+  }
+  .hero-content p {
+    max-width: 239px;
+    font-size: 16px;
+  }
+  .block-content {
+    padding: 25px 15px;
+  }
+  .content-panel__top {
+    flex-direction: column;
+  }
+  .table-top__item {
+    font-size: 16px;
+  }
+  .table-filter {
+    font-size: 16px;
+  }
+
+}
+@media (max-width: 375px) {
+  .custom-h2 {
+    font-size: 22px;
+  }
+  .custom-btn {
+    font-size: 16px;
+  }
+}
+@media (max-width: 320px) {
+  body {
+    font-size: 16px;
+  }
+  .custom-breadcrumb {
+    font-size: 14px;
+    gap: 5px;
+  }
+  .custom-h1, .custom-h2 {
+    font-size: 20px !important;
+  }
+  .custom-h3 {
+    font-size: 18px;
+  }
+  .hero-content {
+    padding: 80px 15px;
+  }
+  .hero-content h1 {
+    max-width: 240px;
+  }
+  .hero-content p {
+    font-size: 14px;
+    margin: 10px 0;
+    max-width: 206px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

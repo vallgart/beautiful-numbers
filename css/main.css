@@ -250,7 +250,7 @@ body[data-view="table"] .custom-section.table {
   padding: 10px 6px;
   font-size: 16px;
   border-radius: 10px;
-  border: dashed;
+  border: 2px dashed;
   border-color: var(--light-gray);
 }
 .content-panel__bottom-item:hover {
@@ -382,7 +382,7 @@ body[data-view="table"] .custom-section.table {
   flex-direction: column;
   gap: 8px;
   align-items: flex-start;
-  width: max-content;
+  justify-content: center;
 }
 .th-stack .pill .icon{
   width:20px;
@@ -395,6 +395,7 @@ body[data-view="table"] .custom-section.table {
   inline-size: 100%;
   box-sizing: border-box;
   font-weight: 400;
+  justify-content: center;
 }
 
 
@@ -497,8 +498,6 @@ body[data-view="table"] .custom-section.table {
     max-width: 206px;
   }
 }
-
-
 
 
 

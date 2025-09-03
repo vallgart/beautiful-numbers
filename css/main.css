@@ -381,7 +381,7 @@ body[data-view="table"] .custom-section.table {
   flex-direction: column;
   gap: 8px;
   align-items: flex-start;
-  max-width: max-content;
+  width: max-content;
 }
 .th-stack .pill .icon{
   width:20px;
@@ -496,6 +496,7 @@ body[data-view="table"] .custom-section.table {
     max-width: 206px;
   }
 }
+
 
 
 

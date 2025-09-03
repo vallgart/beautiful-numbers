@@ -30,8 +30,7 @@ function renderTop(d) {
   panelTop.innerHTML = '';
   panelTop.append(
     topRow('icon-tariff',  d.title),
-    topRow('icon-money',   money(d.price)),
-    topRow('icon-support', 'Как работает маска?')
+    topRow('icon-tariff',   money(d.price)),
   );
 }
 function topRow(iconId, text) {
@@ -130,7 +129,7 @@ tabPanel.addEventListener('keydown', e => {
 
       const pricePill = document.createElement('div');
       pricePill.className = 'pill pill--price';
-      pricePill.append(icon('icon-money'), document.createTextNode(' ' + money(c.price)));
+      pricePill.append(icon('icon-tariff'), document.createTextNode(' ' + money(c.price)));
 
       stack.append(titlePill, pricePill);
       th.appendChild(stack);

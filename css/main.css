@@ -250,7 +250,8 @@ body[data-view="table"] .custom-section.table {
   padding: 10px 6px;
   font-size: 16px;
   border-radius: 10px;
-  border: 1px dashed var(--light-gray);
+  border: dashed;
+  border-color: var(--light-gray);
 }
 .content-panel__bottom-item:hover {
   border-color: var(--black);
@@ -496,6 +497,7 @@ body[data-view="table"] .custom-section.table {
     max-width: 206px;
   }
 }
+
 
 
 

@@ -381,12 +381,7 @@ body[data-view="table"] .custom-section.table {
   flex-direction: column;
   gap: 8px;
   align-items: flex-start;
-}
-.th-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items:flex-start;
+  max-width: max-content;
 }
 .th-stack .pill .icon{
   width:20px;
